@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 $(function () {
-    var dashboardsApi = ues.utils.tenantPrefix() + 'apis/dashboards';
-    var rolesApi = ues.utils.relativePrefix() + 'apis/roles';
-    var userApi = ues.utils.relativePrefix() + 'apis/user';
-    var searchRolesApi = ues.utils.relativePrefix() + 'apis/roles/search';
-    var maxLimitApi = ues.utils.relativePrefix() + 'apis/roles/maxLimit';
+    var dashboardsApi = ues.utils.apiPrefix() + 'apis/dashboards';
+    var rolesApi = ues.utils.apiPrefix() + 'apis/roles';
+    var userApi = ues.utils.apiPrefix() + 'apis/user';
+    var searchRolesApi = ues.utils.apiPrefix() + 'apis/roles/search';
+    var maxLimitApi = ues.utils.apiPrefix() + 'apis/roles/maxLimit';
     var dashboard = ues.global.dashboard;
-    var tokenUrl = ues.utils.tenantPrefix() + 'apis/tokensettings/' + dashboard.id;
+    var tokenUrl = ues.utils.apiPrefix() + 'apis/tokensettings/' + dashboard.id;
     var permissions = dashboard.permissions;
     var viewers = permissions.viewers;
     var editors = permissions.editors;

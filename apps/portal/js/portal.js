@@ -15,7 +15,7 @@
  */
 $(function () {
 
-    var dashboardsApi = ues.utils.tenantPrefix() + 'apis/dashboards';
+    var dashboardsApi = ues.utils.apiPrefix() + 'apis/dashboards';
     var dashboards = [];
     var isStillLoading = false;
     var nextStart = 0;

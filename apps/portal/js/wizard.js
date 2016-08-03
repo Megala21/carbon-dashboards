@@ -114,7 +114,7 @@ $('#provider-list').change(function () {
 $('#test-connection').click(function () {
     var providerConfig = getProviderConfigData();
     $.ajax({
-        url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=testConnection',
+        url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=testConnection',
         method: "POST",
         data: JSON.stringify(providerConfig),
         contentType: "application/json",
@@ -135,7 +135,7 @@ $('#test-connection').click(function () {
 $('#show-data').click(function () {
     var pConfig = getProviderConfigData();
     $.ajax({
-        url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=getData',
+        url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=getData',
         method: "POST",
         data: JSON.stringify(pConfig),
         contentType: "application/json",
@@ -216,7 +216,7 @@ $("#preview").click(function () {
     }
     else {
         $.ajax({
-            url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=preview',
+            url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=preview',
             method: "POST",
             data: JSON.stringify(wizardData),
             contentType: "application/json",
@@ -253,7 +253,7 @@ $("#preview").click(function () {
 $(document).on('click','.complete',function(){
     $("#preview").click();
     $.ajax({
-        url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=addGadgetToStore',
+        url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=addGadgetToStore',
         method: "POST",
         data: JSON.stringify(wizardData),
         contentType: "application/json",
@@ -284,7 +284,7 @@ $(document).on('click','.complete',function(){
 
 function getProviders() {
     $.ajax({
-        url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=getProviders',
+        url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=getProviders',
         method: "GET",
         async: false,
         contentType: "application/json",
@@ -327,7 +327,7 @@ function getProviderConfig() {
     configInput[PROVIDER_NAME] = provider ;
     providerConf[PROVIDER_CONF] = configInput;
     $.ajax({
-        url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=getProviderConfig',
+        url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=getProviderConfig',
         method: "POST",
         data: JSON.stringify(providerConf),
         contentType: "application/json",
@@ -378,7 +378,7 @@ function registerAdvancedProviderUI(data) {
                 configInput[PARTIAL] =  config[key]['childPartial'];
                 providerConf[PROVIDER_CONF] = configInput;
                 $.ajax({
-                    url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=getProviderAdvancedUI',
+                    url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=getProviderAdvancedUI',
                     method: "POST",
                     data: JSON.stringify(providerConf),
                     contentType: "application/json",
@@ -407,7 +407,7 @@ function getProviderConfigData() {
 
 function getChartList() {
     $.ajax({
-        url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=getChartList',
+        url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=getChartList',
         method: "GET",
         contentType: "application/json",
         async: false,
@@ -420,7 +420,7 @@ function getChartList() {
 
 function getChartConfig(providerConfig) {
     $.ajax({
-        url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=getChartConfig',
+        url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=getChartConfig',
         method: "POST",
         data: JSON.stringify(providerConfig),
         contentType: "application/json",
@@ -464,7 +464,7 @@ function registerAdvancedChartUI(data) {
                     "partial": config[key]['childPartial']
                 };
                 $.ajax({
-                    url: ues.utils.relativePrefix() + CREATE_GADGET_API + '?action=getChartAdvancedUI',
+                    url: ues.utils.apiPrefix() + CREATE_GADGET_API + '?action=getChartAdvancedUI',
                     method: "POST",
                     data: JSON.stringify(data),
                     contentType: "application/json",

@@ -25,8 +25,25 @@ ues.global = {};
         return prefix + ues.global.tenantPrefix.replace(/^\//, '') + '/' + domain + '/';
     };
 
+    var apiPrefix = function () {
+        var path = window.location.pathname;
+        var parts = path.split('/');
+        var prefix = '';
+        var i;
+        var count = parts.length - 3;
+
+        if (path.indexOf("/t/") > -1) {
+            count -= 2;
+        }
+        for (i = 0; i < count; i++) {
+            prefix += '../';
+        }
+        return prefix;
+    };
+
     ues.utils = {
         relativePrefix: relativePrefix,
-        tenantPrefix: tenantPrefix
+        tenantPrefix: tenantPrefix,
+        apiPrefix: apiPrefix
     };
 }());

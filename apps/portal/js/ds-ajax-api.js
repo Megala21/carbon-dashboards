@@ -230,7 +230,7 @@
     // Get access token
     gadgets.rpc.register(RPC_SERVICE_GET_ACCESS_TOKEN, function () {
         var target = this.f;
-        var tokenUrl = ues.utils.tenantPrefix() + 'apis/accesstokens/' + ues.global.dashboard.id;
+        var tokenUrl = ues.utils.apiPrefix() + 'apis/accesstokens/' + ues.global.dashboard.id;
         $.ajax({
             url: tokenUrl,
             type: 'GET',

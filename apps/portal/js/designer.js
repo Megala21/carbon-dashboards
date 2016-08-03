@@ -27,7 +27,7 @@ $(function () {
     };
     var nonCategoryKeyWord = "null";
     var designerScrollTop = 0;
-    var dashboardsApi = ues.utils.tenantPrefix() + 'apis/dashboards';
+    var dashboardsApi = ues.utils.apiPrefix() + 'apis/dashboards';
     var dashboardsUrl = ues.utils.tenantPrefix() + 'dashboards';
     var resolveURI = ues.dashboards.resolveURI;
     var findPage = ues.dashboards.findPage;

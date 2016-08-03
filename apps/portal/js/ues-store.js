@@ -17,7 +17,7 @@
  */
 (function () {
     var domain = ues.global.urlDomain || ues.global.userDomain;
-    var assetsUrl = ues.utils.relativePrefix() + 'apis/assets';
+    var assetsUrl = ues.utils.apiPrefix() + 'apis/assets';
     var store = (ues.store = {});
     var SUPERTENANT_DOMAIN = "carbon.super";
 
