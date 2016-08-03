@@ -481,6 +481,10 @@
         return ues.global.dashboard.title;
     };
 
+    var getTenantDomain = function () {
+        return ues.global.userDomain;
+    };
+
     var setDashboardLoadingState = function (state) {
         dashboardLoadingState = state;
     };
@@ -501,6 +505,7 @@
         getDashboardID: getDashboardID,
         getDashboardName: getDashboardName,
         getDashboardLoadingState: getDashboardLoadingState,
+        getTenantDomain: getTenantDomain,
         setDashboardLoadingState : setDashboardLoadingState
     };
 
