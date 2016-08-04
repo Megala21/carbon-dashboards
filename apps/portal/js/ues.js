@@ -32,7 +32,7 @@ ues.global = {};
         var i;
         var count = parts.length - 3;
 
-        if (path.indexOf("/t/") > -1) {
+        if (parts.indexOf("t") === 2) {
             count -= 2;
         }
         for (i = 0; i < count; i++) {
